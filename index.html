@@ -1,60 +1,69 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Семестровая работа</title>
-        <link rel="stylesheet" href="style/styles.css">
-    </head>
-    <body>
-        <div class="page-container">
-            <div class="header">Навигация</div>
-            <div class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li> 
-                    <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
-                </ul>
-            </div>
-            <div class="content">
-                <div class="profile-header">
-                    <h1 class="profile-title">Информация об авторе</h1>
-                    <img class="profile-photo" src="images/photo.png" alt="Фото автора">
-                    <h2 class="profile-name">Байрашный Максим Олегович</h2>
-                    <p class="profile-group">ЭФБО-17-24</p>
-                </div>
-                
-                <div class="about-me">
-                    <p>Обо мне: Я родился в России, жил в Казахстане.</p>
-                </div>
-                <div class="skills-container">
-                    <div class="skill-tag">Навыки:</div>
-                    
-                </div>
-                <div class="skills-container">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семестровая работа</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <header class="header">
+            <h1>Навигация</h1>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li> 
+                <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        
+        <main class="content">
+            <article class="profile-header">
+                <h1 class="profile-title">Информация об авторе</h1>
+                <img class="profile-photo" src="images/photo.png" alt="Фото автора">
+                <h2 class="profile-name">Байрашный Максим Олегович</h2>
+                <p class="profile-group">ЭФБО-17-24</p>
+            </article>
+            
+            <section class="about-me">
+                <h2>Обо мне</h2>
+                <p>Я родился в России, жил в Казахстане.</p>
+            </section>
+            
+            <section class="skills-section">
+                <h2>Навыки</h2>
+                <div class="skills-grid">
                     <div class="skill-tag">C++/C#</div>
                     <div class="skill-tag">HTML/CSS/JS</div>
                     <div class="skill-tag">PYTHON</div>
                     <div class="skill-tag">Git</div>
                 </div>
-                
-                <div class="experience-section">
-                    <h2 class="section-title">Мой опыт работы</h2>
-                    <div class="experience-card">
+            </section>
+            
+            <section class="experience-section">
+                <h2 class="section-title">Мой опыт работы</h2>
+                <div class="experience-grid">
+                    <article class="experience-card">
                         <h3 class="experience-title">Опыт 1</h3>
                         <p class="experience-desc">Создание шахмат на python без использования библиотек исключая графическую Tkinter.</p>
-                    </div>
-                    <div class="experience-card">
+                    </article>
+                    <article class="experience-card">
                         <h3 class="experience-title">Опыт 2</h3>
                         <p class="experience-desc">Создание сайтов.</p>
-                    </div>
-                    
+                    </article>
                 </div>
-            </div>
-            <div class="footer"><p>Почта: ____@gmail.com</p>
-            <p>Телефон: +___9_65499</p></div>    
-        </div>
-    </body>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p>Почта: ____@gmail.com</p>
+            <p>Телефон: +___9_65499</p>
+        </footer>
+    </div>
+</body>
 </html>
