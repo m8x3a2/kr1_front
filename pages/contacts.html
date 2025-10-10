@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../main.js" defer></script>
     <title>Контакты</title>
     <link rel="stylesheet" href="../style/styles.css">
     <style>
@@ -218,8 +219,8 @@
 
     <footer class="footer">
         <p>Почта: ____@gmail.com</p>
-        <p>+0 (__5) 1__-45-__</p>
-        
+        <p> +___9_65499</p>
+
     </footer>
 
 
@@ -276,7 +277,7 @@
 
                 <div class="modal-actions">
                     <!-- Кнопка отмены с автоматическим закрытием через form method="dialog" -->
-                    <button type="submit" class="btn btn-secondary">Отмена</button>
+                    <button type="submit" class="btn btn-secondary" onclick="contactModal.close()">Отмена</button>
                     <!-- Кнопка отправки с обработкой через JavaScript -->
                     <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
                 </div>
@@ -284,54 +285,7 @@
         </div>
     </dialog>
 
-    <script>
-        // Функция для отправки формы
-        function submitForm() {
-            const form = document.getElementById('feedbackForm');
-            const formData = new FormData(form);
 
-            // Простая валидация
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-            }
-
-            // Собираем данные формы
-            const data = {
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                email: formData.get('email'),
-                category: formData.get('category'),
-                message: formData.get('message')
-            };
-
-            // В реальном приложении здесь был бы AJAX-запрос
-            console.log('Данные формы:', data);
-
-            // Показываем уведомление об успешной отправке
-            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
-
-            // Закрываем модальное окно
-            contactModal.close();
-
-            // Очищаем форму
-            form.reset();
-        }
-
-        // Закрытие модального окна по клику на фон
-        document.getElementById('contactModal').addEventListener('click', function (event) {
-            if (event.target === this) {
-                this.close();
-            }
-        });
-
-        // Обработка отправки формы через Enter (предотвращаем стандартное поведение)
-        document.getElementById('feedbackForm').addEventListener('keypress', function (event) {
-            if (event.key === 'Enter' && event.target.type !== 'textarea') {
-                event.preventDefault();
-            }
-        });
-    </script>
     </div>
 </body>
 
