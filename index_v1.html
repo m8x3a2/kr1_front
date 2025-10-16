@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная - Портфолио</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <h1 class="header__title">Портфолио разработчика</h1>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-toggle__icon">🌙</span>
+                <span class="visually-hidden">Переключить тему</span>
+            </button>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--active"> 
+                    <a class="nav__link" href="index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/news.html">Новости</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/practices.html">Практики</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="pages/contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <main class="main">
+            <article class="profile">
+                <h1 class="profile__title">Информация об авторе</h1>
+                <img class="profile__photo" src="images/photo.png" alt="Фото автора">
+                <h2 class="profile__name">Байрашный Максим Олегович</h2>
+                <p class="profile__group">ЭФБО-17-24</p>
+            </article>
+            
+            <section class="about">
+                <h2 class="about__title">Обо мне</h2>
+                <p class="about__text">
+                    Я родился в России, жил в Казахстане. Увлекаюсь веб-разработкой, изучаю современные технологии 
+                    и frameworks. Люблю создавать красивые и функциональные интерфейсы.
+                </p>
+            </section>
+            
+            <section class="skills">
+                <h2 class="skills__title">Мои навыки</h2>
+                <div class="skills__grid">
+                    <div class="skill skill--cpp">
+                        <span class="skill__name">C++/C#</span>
+                    </div>
+                    <div class="skill skill--web">
+                        <span class="skill__name">HTML/CSS/JS</span>
+                    </div>
+                    <div class="skill skill--python">
+                        <span class="skill__name">PYTHON</span>
+                    </div>
+                    <div class="skill skill--git">
+                        <span class="skill__name">Git</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="experience">
+                <h2 class="experience__title">Мой опыт работы</h2>
+                <div class="experience__grid">
+                    <article class="experience-card">
+                        <h3 class="experience-card__title">Опыт 1</h3>
+                        <p class="experience-card__desc">
+                            Создание шахмат на python без использования библиотек исключая графическую Tkinter.
+                        </p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-card__title">Опыт 2</h3>
+                        <p class="experience-card__desc">
+                            Разработка современных веб-сайтов с использованием HTML5, CSS3 и JavaScript.
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <div class="footer__content">
+                <p class="footer__text">Почта: ____@gmail.com</p>
+                <p class="footer__text">Телефон: +___9_65499</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Переключение темы
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('.theme-toggle__icon');
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.body.removeAttribute('data-theme');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Загрузка сохраненной темы
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+        }
+    </script>
+</body>
+</html>
